@@ -11,5 +11,7 @@ namespace Intent.RoslynWeaver.Attributes
 
         public Mode Signature { get; set; }
         public Mode Body { get; set; }
+        public Mode Comments { get; set; }
+        public Mode Attributes { get; set; }
     }
 }
