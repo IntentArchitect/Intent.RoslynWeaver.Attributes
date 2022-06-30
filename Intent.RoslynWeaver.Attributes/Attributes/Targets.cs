@@ -20,5 +20,6 @@ namespace Intent.RoslynWeaver.Attributes
         Records = 4096,
         EnumMembers = 8192,
         Delegates = 16384,
+        TopLevelStatements = 32768
     }
 }
