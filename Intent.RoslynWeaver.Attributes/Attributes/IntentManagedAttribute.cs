@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Intent.RoslynWeaver.Attributes
 {
-    // By making this conditional upon the a compilation symbol which will never exist, code using
+    // By making this conditional upon a compilation symbol which should never be set, code using
     // this attribute will never include the attribute when compiled, and thus, it will not be
     // available through reflection at runtime.
     //
