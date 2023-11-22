@@ -80,10 +80,10 @@ namespace Intent.RoslynWeaver.Attributes
     public class IntentMergeSignatureAttribute : Attribute { }
 
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
-    [AttributeUsage(AttributeTargets.Assembly)]
+    [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
     public class IntentTagModeExplicitAttribute : Attribute { }
 
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
-    [AttributeUsage(AttributeTargets.Assembly)]
+    [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
     public class IntentTagModeImplicitAttribute : Attribute { }
 }

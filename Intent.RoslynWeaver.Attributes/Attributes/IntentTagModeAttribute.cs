@@ -19,7 +19,7 @@ namespace Intent.RoslynWeaver.Attributes
     // would occur unless they're running a version of Intent which includes the required version
     // of the NuGet package.
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
-    [AttributeUsage(AttributeTargets.Assembly)]
+    [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
     public class IntentTagModeAttribute : Attribute
     {
         public IntentTagModeAttribute(TagMode tagMode)
