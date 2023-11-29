@@ -21,7 +21,14 @@ namespace Intent.RoslynWeaver.Attributes
 
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Constructor | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Method | AttributeTargets.Enum | AttributeTargets.Struct)]
-    public class IntentFullyAttribute : Attribute { }
+    public class IntentFullyAttribute : Attribute
+    {
+        /// <summary>
+        /// When set will try match template statements based on whether or not they start with the
+        /// provided value. Only applicable when applied as commented out attributes above statements.
+        /// </summary>
+        public new string Match { get; set; }
+    }
 
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Constructor | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Method | AttributeTargets.Enum | AttributeTargets.Struct)]
@@ -41,7 +48,14 @@ namespace Intent.RoslynWeaver.Attributes
 
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Constructor | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Method | AttributeTargets.Enum | AttributeTargets.Struct)]
-    public class IntentIgnoreAttribute : Attribute { }
+    public class IntentIgnoreAttribute : Attribute
+    {
+        /// <summary>
+        /// When set will try match template statements based on whether or not they start with the
+        /// provided value. Only applicable when applied as commented out attributes above statements.
+        /// </summary>
+        public new string Match { get; set; }
+    }
 
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Constructor | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Method | AttributeTargets.Enum | AttributeTargets.Struct)]
