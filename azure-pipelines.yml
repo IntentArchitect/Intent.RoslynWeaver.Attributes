@@ -1,0 +1,44 @@
+trigger:
+  batch: 'true'
+  branches:
+    include:
+    - master
+
+variables:
+- group: 'NuGet.org API Keys'
+- name: 'isMaster'
+  value: $[in(variables['Build.SourceBranch'], 'refs/heads/master')]
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- checkout: 'self'
+  persistCredentials: 'true'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+  inputs:
+    command: 'build'
+    arguments: >
+      --configuration Release
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
+  condition: and(succeeded(), in('True', variables.isMaster))
+  inputs:
+    command: 'pack'
+    outputDir: '$(Build.ArtifactStagingDirectory)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet nuget push'
+  condition: and(succeeded(), in('True', variables.isMaster))
+  inputs:
+    command: 'custom'
+    custom: 'nuget'
+    arguments: >
+      push $(Build.ArtifactStagingDirectory)/*.nupkg
+      -s https://api.nuget.org/v3/index.json
+      -k $(nuget-api-key-intentarchitect)
+      --skip-duplicate
