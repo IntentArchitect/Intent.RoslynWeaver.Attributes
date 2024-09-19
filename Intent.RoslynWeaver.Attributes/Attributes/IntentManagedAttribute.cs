@@ -19,7 +19,7 @@ namespace Intent.RoslynWeaver.Attributes
     // would occur unless they're running a version of Intent which includes the required version
     // of the NuGet package.
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Constructor | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Method | AttributeTargets.Enum | AttributeTargets.Struct , AllowMultiple=true)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Constructor | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Event | AttributeTargets.Field | AttributeTargets.GenericParameter | AttributeTargets.Interface | AttributeTargets.Method | AttributeTargets.Parameter | AttributeTargets.Property | AttributeTargets.ReturnValue | AttributeTargets.Struct , AllowMultiple=true)]
     public class IntentManagedAttribute : Attribute
     {
         public IntentManagedAttribute(Mode elementMode)

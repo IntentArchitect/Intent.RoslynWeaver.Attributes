@@ -19,7 +19,7 @@ namespace Intent.RoslynWeaver.Attributes
     // would occur unless they're running a version of Intent which includes the required version
     // of the NuGet package.
     [Conditional("INTENT_ROSLYN_WEAVER_ATTRIBUTES")]
-    [AttributeUsage( AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Field | AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Constructor | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Event | AttributeTargets.Field | AttributeTargets.GenericParameter | AttributeTargets.Interface | AttributeTargets.Method | AttributeTargets.Parameter | AttributeTargets.Property | AttributeTargets.ReturnValue | AttributeTargets.Struct)]
     public class IntentInitialGenAttribute : Attribute
     {
     }

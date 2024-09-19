@@ -5,6 +5,7 @@ namespace Intent.RoslynWeaver.Attributes
     [Flags]
     public enum Targets
     {
+        All = 0x7FFF_FFFF,
         Classes = 0x0000_0001,
         Methods = 0x0000_0002,
         Constructors = 0x0000_0004,
