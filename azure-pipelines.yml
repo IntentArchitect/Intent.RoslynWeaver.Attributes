@@ -6,11 +6,14 @@ trigger:
 
 variables:
 - group: 'NuGet.org API Keys'
+- group: 'Pipeline Agent Pool Names'
 - name: 'isMaster'
   value: $[in(variables['Build.SourceBranch'], 'refs/heads/master')]
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: $(BuildPool.AzureManaged)
+  demands:
+  - 'ImageOverride -equals ubuntu-latest'
 
 steps:
 
