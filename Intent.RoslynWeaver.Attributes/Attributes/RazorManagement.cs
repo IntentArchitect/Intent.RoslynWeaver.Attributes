@@ -11,5 +11,9 @@
         public static string Merge = string.Empty;
         public static string MergeBody = string.Empty;
         public static string MergeSignature = string.Empty;
+
+        public static string FullyAttributes(params string[] attributes) => string.Empty;
+        public static string IgnoreAttributes(params string[] attributes) => string.Empty;
+        public static string MergeAttributes(params string[] attributes) => string.Empty;
     }
 }
